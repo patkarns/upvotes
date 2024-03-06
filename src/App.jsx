@@ -1,14 +1,14 @@
 import { useState } from 'react'
 import './App.scss'
-import Upvote from './components/upvote/Upvote'
+import UpvoteList from './components/upvote-list/UpvoteList'
 
 function App() {
-  const [isSelected, setIsSelected] = useState(false);
+  
 
   return (
     <>
       <div className="card">
-        <Upvote isSelected={isSelected} setIsSelected={setIsSelected}/>
+        <UpvoteList/>
       </div>
     </>
   )
