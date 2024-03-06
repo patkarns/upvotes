@@ -3,12 +3,12 @@ import './App.scss'
 import Upvote from './components/upvote/Upvote'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isSelected, setIsSelected] = useState(false);
 
   return (
     <>
       <div className="card">
-        <Upvote/>
+        <Upvote isSelected={isSelected} setIsSelected={setIsSelected}/>
       </div>
     </>
   )
