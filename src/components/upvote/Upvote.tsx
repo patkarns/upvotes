@@ -10,7 +10,7 @@ function Upvote() {
   return (
     <>
       <div>
-        <button onClick={() => setIsSelected(!isSelected)}> <ArrowUpIcon fill={isSelected ? colors.selected : colors.default }/> </button>
+        <button style={ { backgroundColor: isSelected ? colors.backgroundSelected : colors.backgroundDefault } } onClick={() => setIsSelected(!isSelected)}> <ArrowUpIcon fill={isSelected ? colors.selected : colors.default }/> </button>
       </div>
     </>
   )
