@@ -1,0 +1,21 @@
+@import "../../styles/utilities/variables.scss";
+
+.UpvotesList {
+  padding: .5em;
+  border-radius: 1em;
+  border: .2em solid $color-gray-lighter;
+  width: 50em;
+  align-items: 'center'
+}
+
+button {
+  width: 5em;
+  height: 5em;
+  border: none;
+  border-radius: 1rem;
+  padding: 1em;
+
+  &.AddUpvoteButton {
+    margin: 2em;
+  }
+}
