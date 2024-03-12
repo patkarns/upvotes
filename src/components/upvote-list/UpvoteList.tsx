@@ -8,9 +8,6 @@ import UpvoteButton from '../upvote-button/UpvoteButton';
 import './UpvoteList.scss';
 
 function UpvoteList({ id, isSelected, setIsSelected, numUpvotes, setNumUpvotes }) {
-  // const [isSelected, setIsSelected] = useState(false);
-  // const [numUpvotes, setNumUpvotes] = useState(0);
-
   const upvotes = [...Array(numUpvotes)].map((e, i) => <UpvoteButton key={i} isSelected={isSelected} setIsSelected={() => setIsSelected(id)}/>)
 
   return (

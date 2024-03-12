@@ -11,7 +11,7 @@ function UpvoteButton({ isSelected, setIsSelected }) {
           : colors.backgroundDefault,
       }}
       className="UpvoteButton"
-      onClick={() => setIsSelected(!isSelected)}
+      onClick={() => setIsSelected()}
     >
       {" "}
       <ArrowUpIcon fill={isSelected ? colors.selected : colors.default} />{" "}
