@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import UpvoteList from "../upvote-list/UpvoteList";
 
@@ -11,30 +11,42 @@ function Upvote() {
 
   const setIsSelected = (id) => {
     const upvoteList = upvoteListsById[id];
-    setUpvoteListsById({
+    const updatedUpvoteListsById = {
       ...upvoteListsById,
       [id] : {
         ...upvoteList,
         isSelected: !upvoteList.isSelected
       }
-    })
+    };
+    setUpvoteListsById(updatedUpvoteListsById);
+    localStorage.setItem('upvote-lists-by-id', JSON.stringify(updatedUpvoteListsById));
   };
 
   const setNumUpvotes = (id, numUpvotes) => {
     const upvoteList = upvoteListsById[id];
-    setUpvoteListsById({
+    const updatedUpvoteListsById = {
       ...upvoteListsById,
       [id] : {
         ...upvoteList,
         numUpvotes
       }
-    })
+    };
+    setUpvoteListsById(updatedUpvoteListsById);
+    localStorage.setItem('upvote-lists-by-id', JSON.stringify(updatedUpvoteListsById));
   };
+
+  useEffect(() => {
+    const data = localStorage.getItem('upvote-lists-by-id');
+    if (data) {
+      setUpvoteListsById(JSON.parse(data));
+    }
+  }, []);
 
   return (
     <div className="card">
       {Object.keys(upvoteListsById).map((upvoteListId) => (
         <UpvoteList
+          key={upvoteListId}
           id={upvoteListId}
           isSelected={upvoteListsById[upvoteListId].isSelected}
           numUpvotes={upvoteListsById[upvoteListId].numUpvotes}
