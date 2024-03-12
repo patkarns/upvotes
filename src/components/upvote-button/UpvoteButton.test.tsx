@@ -11,7 +11,7 @@ test("should render button", () => {
   expect(buttonElement).toBeInTheDocument();
 });
 
-test('should handle click events', () => {
+test("should handle click events", () => {
   const setIsSelected = vi.fn();
   render(
     <UpvoteButton key="123" isSelected={false} setIsSelected={setIsSelected} />

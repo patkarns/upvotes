@@ -13,30 +13,36 @@ function Upvote() {
     const upvoteList = upvoteListsById[id];
     const updatedUpvoteListsById = {
       ...upvoteListsById,
-      [id] : {
+      [id]: {
         ...upvoteList,
-        isSelected: !upvoteList.isSelected
-      }
+        isSelected: !upvoteList.isSelected,
+      },
     };
     setUpvoteListsById(updatedUpvoteListsById);
-    localStorage.setItem('upvote-lists-by-id', JSON.stringify(updatedUpvoteListsById));
+    localStorage.setItem(
+      "upvoteListsById",
+      JSON.stringify(updatedUpvoteListsById)
+    );
   };
 
   const setNumUpvotes = (id, numUpvotes) => {
     const upvoteList = upvoteListsById[id];
     const updatedUpvoteListsById = {
       ...upvoteListsById,
-      [id] : {
+      [id]: {
         ...upvoteList,
-        numUpvotes
-      }
+        numUpvotes,
+      },
     };
     setUpvoteListsById(updatedUpvoteListsById);
-    localStorage.setItem('upvote-lists-by-id', JSON.stringify(updatedUpvoteListsById));
+    localStorage.setItem(
+      "upvoteListsById",
+      JSON.stringify(updatedUpvoteListsById)
+    );
   };
 
   useEffect(() => {
-    const data = localStorage.getItem('upvote-lists-by-id');
+    const data = localStorage.getItem("upvoteListsById");
     if (data) {
       setUpvoteListsById(JSON.parse(data));
     }

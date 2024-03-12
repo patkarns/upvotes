@@ -1,12 +1,12 @@
-import './App.scss'
-import Upvote from './components/upvote/Upvote'
+import "./App.scss";
+import Upvote from "./components/upvote/Upvote";
 
 function App() {
   return (
     <>
-      <Upvote/>
+      <Upvote />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
