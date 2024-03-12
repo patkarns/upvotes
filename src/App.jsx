@@ -1,16 +1,10 @@
 import './App.scss'
-import UpvoteList from './components/upvote-list/UpvoteList'
+import Upvote from './components/upvote/Upvote'
 
 function App() {
-  
-
   return (
     <>
-      <div className="card">
-        <UpvoteList/>
-        <UpvoteList/>
-        <UpvoteList/>
-      </div>
+      <Upvote/>
     </>
   )
 }
