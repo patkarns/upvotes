@@ -6,11 +6,22 @@
   border: .2em solid $color-gray-lighter;
   width: 50em;
   height: 5em;
-  align-items: 'center'
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  &::-webkit-scrollbar {
+    height: .5em;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: $color-gray-light; 
+    border-radius: .5em;
+  }
 }
 
 button {
-  width: 5em;
+  min-width: 5em;
   height: 5em;
   border: none;
   border-radius: 1rem;
